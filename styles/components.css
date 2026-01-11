@@ -289,16 +289,28 @@
 
 @media (max-width: 480px) {
   .hero__avatar {
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
   }
   
   .hero__name {
-    font-size: 2rem;
+    font-size: 1.75rem;
   }
   
   .hero__statement {
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+  }
+  
+  .hero__scroll-btn {
+    width: 40px;
+    height: 40px;
+    margin-top: var(--space-4);
+  }
+  
+  .hero__scroll-btn svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
@@ -413,6 +425,32 @@
 
 .contact-link:hover {
   color: var(--accent-primary);
+}
+
+@media (max-width: 480px) {
+  .contact-links {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+  
+  .contact-link {
+    padding: 12px 0;
+    display: block;
+  }
+  
+  .focus-item {
+    font-size: var(--font-size-sm);
+    padding-left: var(--space-2);
+  }
+  
+  .activity {
+    flex-direction: column;
+    gap: var(--space-1);
+  }
+  
+  .activity__content {
+    font-size: var(--font-size-sm);
+  }
 }
 
 /* ============================================

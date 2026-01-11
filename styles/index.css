@@ -322,12 +322,38 @@ main {
 }
 
 @media (max-width: 480px) {
+  :root {
+    --font-size-base: 0.9375rem;
+  }
+  
+  .nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-2);
+  }
+  
+  .nav__logo {
+    width: 100%;
+    text-align: center;
+    font-size: var(--font-size-sm);
+  }
+  
   .nav__links {
     gap: var(--space-2);
+    justify-content: center;
   }
 
   .nav__link {
     font-size: var(--font-size-xs);
+    padding: 8px 12px;
+  }
+  
+  .container {
+    padding: 0 var(--space-2);
+  }
+  
+  .section {
+    padding: var(--space-6) 0;
   }
 }
 

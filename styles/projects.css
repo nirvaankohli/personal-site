@@ -171,7 +171,22 @@
    RESPONSIVE
    ============================================ */
 
+@media (max-width: 768px) {
+  .page-title {
+    font-size: var(--font-size-2xl);
+  }
+  
+  .page-subtitle {
+    font-size: var(--font-size-base);
+  }
+}
+
 @media (max-width: 640px) {
+  .section--page-header {
+    padding-top: var(--space-8);
+    padding-bottom: var(--space-4);
+  }
+  
   .filter-section {
     flex-direction: column;
     align-items: flex-start;
@@ -179,5 +194,40 @@
   
   .filter-label {
     margin-bottom: var(--space-1);
+  }
+  
+  .filter-bar {
+    width: 100%;
+  }
+  
+  .filter-btn {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+  
+  .card__image-placeholder,
+  .card__image {
+    height: 100px;
+  }
+  
+  .card__content {
+    padding: var(--space-2);
+  }
+  
+  .card__title {
+    font-size: var(--font-size-base);
+  }
+  
+  .card__intent {
+    font-size: var(--font-size-sm);
+  }
+  
+  .tags {
+    gap: 4px;
+  }
+  
+  .tag {
+    font-size: 10px;
+    padding: 2px 6px;
   }
 }
