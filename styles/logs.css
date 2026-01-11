@@ -1,0 +1,89 @@
+/* ============================================
+   LOGS PAGE STYLES
+   ============================================ */
+
+.section--page-header {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-6);
+}
+
+.page-title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-3xl);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.page-subtitle {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  color: var(--text-secondary);
+  max-width: 500px;
+}
+
+/* ============================================
+   LOG LIST
+   ============================================ */
+
+.log-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ============================================
+   LOG ENTRY
+   ============================================ */
+
+.log-entry {
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--border-subtle);
+  transition: border-color var(--transition-base);
+}
+
+.log-entry:hover {
+  border-left-color: var(--accent-primary);
+}
+
+.log-entry__header {
+  margin-bottom: var(--space-2);
+}
+
+.log-entry__date {
+  font-family: var(--font-mono);
+  font-size: var(--font-size-xs);
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: var(--space-1);
+}
+
+.log-entry__title {
+  font-family: var(--font-serif);
+  font-size: var(--font-size-lg);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.log-entry__content {
+  color: var(--text-secondary);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--space-2);
+}
+
+.log-entry__content p {
+  margin-bottom: var(--space-2);
+  color: inherit;
+}
+
+.log-entry__content p:last-child {
+  margin-bottom: 0;
+}
+
+.log-entry__content em {
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+.log-entry__tags {
+  margin-top: var(--space-2);
+}

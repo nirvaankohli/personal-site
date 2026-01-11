@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projects by Nirvaan Kohli—robotics tools, AI agents, computer vision, and more.">
+  <title>Projects — Nirvaan Kohli</title>
+  
+  <link rel="stylesheet" href="../styles/index.css">
+  <link rel="stylesheet" href="../styles/components.css">
+  <link rel="stylesheet" href="../styles/projects.css">
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav__logo">nirvaan.kohli</a>
+    <ul class="nav__links">
+      <li><a href="/" class="nav__link">Home</a></li>
+      <li><a href="/projects/" class="nav__link nav__link--active">Projects</a></li>
+      <li><a href="/events/" class="nav__link">Events</a></li>
+      <li><a href="https://blog.nirvaankohli.com" class="nav__link" target="_blank" rel="noopener">Blog</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Header -->
+    <section class="section section--page-header">
+      <div class="container">
+        <h1 class="page-title fade-in">Projects</h1>
+        <p class="page-subtitle fade-in">
+          AI agents, robotics tools, computer vision, and explorations in between.
+        </p>
+      </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="section section--compact">
+      <div class="container container--wide">
+        <!-- Status Filter -->
+        <div class="filter-section fade-in">
+          <span class="filter-label mono">Status</span>
+          <div class="filter-bar">
+            <button class="filter-btn filter-btn--active" data-filter="all" data-filter-type="status">All</button>
+            <button class="filter-btn" data-filter="research" data-filter-type="status">Research</button>
+            <button class="filter-btn" data-filter="wip" data-filter-type="status">In Progress</button>
+            <button class="filter-btn" data-filter="shipped" data-filter-type="status">Shipped</button>
+          </div>
+        </div>
+        <!-- Tag Filter -->
+        <div class="filter-section fade-in">
+          <span class="filter-label mono">Tags</span>
+          <div class="filter-bar" id="tag-filters">
+            <button class="filter-btn filter-btn--active" data-filter="all" data-filter-type="tag">All</button>
+            <button class="filter-btn" data-filter="robotics" data-filter-type="tag">robotics</button>
+            <button class="filter-btn" data-filter="ai-agents" data-filter-type="tag">ai-agents</button>
+            <button class="filter-btn" data-filter="computer-vision" data-filter-type="tag">computer-vision</button>
+            <button class="filter-btn" data-filter="ml" data-filter-type="tag">ml</button>
+            <button class="filter-btn" data-filter="visualization" data-filter-type="tag">visualization</button>
+            <button class="filter-btn" data-filter="algorithms" data-filter-type="tag">algorithms</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Project Grid -->
+    <section class="section">
+      <div class="container container--wide">
+        <div class="project-grid" id="project-grid">
+          
+          <!-- OmniLab -->
+          <article class="card fade-in" data-status="wip" data-tags="robotics,tools" data-repo="https://github.com/nirvaankohli/OmniLab" data-demo="">
+            <div class="card__image-placeholder"></div>
+            <div class="card__content">
+              <h3 class="card__title">OmniLab</h3>
+              <p class="card__intent">A toolkit for VEX robotics coders—path planning, simulation, and team collaboration.</p>
+              <div class="card__meta">
+                <span class="status status--wip">In Progress</span>
+                <time class="card__date mono">2025-12</time>
+              </div>
+              <div class="tags mt-4">
+                <span class="tag">robotics</span>
+                <span class="tag">tools</span>
+              </div>
+              <div class="card__links">
+                <a href="https://github.com/nirvaankohli/OmniLab" class="card__link-btn" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Culinary Atlas -->
+          <article class="card fade-in" data-status="shipped" data-tags="ai-agents,visualization" data-repo="https://github.com/nirvaankohli/culinary-atlas" data-demo="">
+            <div class="card__image-placeholder"></div>
+            <div class="card__content">
+              <h3 class="card__title">Culinary Atlas</h3>
+              <p class="card__intent">Visualizes global recipe variations on an interactive map using multi-agent AI.</p>
+              <div class="card__meta">
+                <span class="status status--shipped">Shipped</span>
+                <time class="card__date mono">2025-12</time>
+              </div>
+              <div class="tags mt-4">
+                <span class="tag">ai-agents</span>
+                <span class="tag">visualization</span>
+              </div>
+              <div class="card__links">
+                <a href="https://github.com/nirvaankohli/culinary-atlas" class="card__link-btn" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Argument Framework Engine -->
+          <article class="card fade-in" data-status="shipped" data-tags="nlp,graphs" data-repo="https://github.com/nirvaankohli/argument-framework-engine" data-demo="">
+            <div class="card__image-placeholder"></div>
+            <div class="card__content">
+              <h3 class="card__title">Argument Framework Engine</h3>
+              <p class="card__intent">Extracts arguments from debates, builds support/attack graphs, and visualizes who wins.</p>
+              <div class="card__meta">
+                <span class="status status--shipped">Shipped</span>
+                <time class="card__date mono">2025-11</time>
+              </div>
+              <div class="tags mt-4">
+                <span class="tag">nlp</span>
+                <span class="tag">graphs</span>
+              </div>
+              <div class="card__links">
+                <a href="https://github.com/nirvaankohli/argument-framework-engine" class="card__link-btn" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Space Radar -->
+          <article class="card fade-in" data-status="shipped" data-tags="ai-agents,news" data-repo="https://github.com/nirvaankohli/space-radar" data-demo="">
+            <div class="card__image-placeholder"></div>
+            <div class="card__content">
+              <h3 class="card__title">Space Radar</h3>
+              <p class="card__intent">Multi-agent system that scours space news, clusters duplicates, and ranks what matters.</p>
+              <div class="card__meta">
+                <span class="status status--shipped">Shipped</span>
+                <time class="card__date mono">2025-10</time>
+              </div>
+              <div class="tags mt-4">
+                <span class="tag">ai-agents</span>
+                <span class="tag">news</span>
+              </div>
+              <div class="card__links">
+                <a href="https://github.com/nirvaankohli/space-radar" class="card__link-btn" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- InvaSee -->
+          <article class="card fade-in" data-status="shipped" data-tags="ai,environment" data-repo="https://github.com/nirvaankohli/invasisee" data-demo="">
+            <div class="card__image-placeholder"></div>
+            <div class="card__content">
+              <h3 class="card__title">InvaSee</h3>
+              <p class="card__intent">Identify and report invasive species using AI and crowd verification.</p>
+              <div class="card__meta">
+                <span class="status status--shipped">Shipped</span>
+                <time class="card__date mono">2025-09</time>
+              </div>
+              <div class="tags mt-4">
+                <span class="tag">ai</span>
+                <span class="tag">environment</span>
+              </div>
+              <div class="card__links">
+                <a href="https://github.com/nirvaankohli/invasisee" class="card__link-btn" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Maze Pathfinding Lab -->
+          <article class="card fade-in" data-status="shipped" data-tags="algorithms,visualization" data-repo="https://github.com/nirvaankohli/maze-pathfinding-lab" data-demo="">
+            <div class="card__image-placeholder"></div>
+            <div class="card__content">
+              <h3 class="card__title">Maze Pathfinding Lab</h3>
+              <p class="card__intent">Compares BFS, DFS, Dijkstra, and A* with visual canvas and performance metrics.</p>
+              <div class="card__meta">
+                <span class="status status--shipped">Shipped</span>
+                <time class="card__date mono">2025-08</time>
+              </div>
+              <div class="tags mt-4">
+                <span class="tag">algorithms</span>
+                <span class="tag">visualization</span>
+              </div>
+              <div class="card__links">
+                <a href="https://github.com/nirvaankohli/maze-pathfinding-lab" class="card__link-btn" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Boometer -->
+          <article class="card fade-in" data-status="shipped" data-tags="ml,computer-vision" data-repo="https://github.com/nirvaankohli/boometer" data-demo="">
+            <div class="card__image-placeholder"></div>
+            <div class="card__content">
+              <h3 class="card__title">Boometer</h3>
+              <p class="card__intent">Stream videos while monitoring fear reactions using ML emotion detection.</p>
+              <div class="card__meta">
+                <span class="status status--shipped">Shipped</span>
+                <time class="card__date mono">2025-07</time>
+              </div>
+              <div class="tags mt-4">
+                <span class="tag">ml</span>
+                <span class="tag">computer-vision</span>
+              </div>
+              <div class="card__links">
+                <a href="https://github.com/nirvaankohli/boometer" class="card__link-btn" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Multimodal Exploring -->
+          <article class="card fade-in" data-status="research" data-tags="ml,multimodal" data-repo="https://github.com/nirvaankohli/multimodal-exploring" data-demo="">
+            <div class="card__image-placeholder"></div>
+            <div class="card__content">
+              <h3 class="card__title">Multimodal Exploring</h3>
+              <p class="card__intent">Experiments with multimodal image captioning models.</p>
+              <div class="card__meta">
+                <span class="status status--research">Research</span>
+                <time class="card__date mono">2025-05</time>
+              </div>
+              <div class="tags mt-4">
+                <span class="tag">ml</span>
+                <span class="tag">multimodal</span>
+              </div>
+              <div class="card__links">
+                <a href="https://github.com/nirvaankohli/multimodal-exploring" class="card__link-btn" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Magic Cam -->
+          <article class="card fade-in" data-status="shipped" data-tags="computer-vision,fun" data-repo="https://github.com/nirvaankohli/magic-cam" data-demo="">
+            <div class="card__image-placeholder"></div>
+            <div class="card__content">
+              <h3 class="card__title">Magic Cam</h3>
+              <p class="card__intent">Computer vision where different hand gestures cast different spells.</p>
+              <div class="card__meta">
+                <span class="status status--shipped">Shipped</span>
+                <time class="card__date mono">2025-04</time>
+              </div>
+              <div class="tags mt-4">
+                <span class="tag">computer-vision</span>
+                <span class="tag">fun</span>
+              </div>
+              <div class="card__links">
+                <a href="https://github.com/nirvaankohli/magic-cam" class="card__link-btn" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Drive Train 2025 -->
+          <article class="card fade-in" data-status="wip" data-tags="robotics,competition" data-repo="https://github.com/nirvaankohli/drive-train-2025" data-demo="">
+            <div class="card__image-placeholder"></div>
+            <div class="card__content">
+              <h3 class="card__title">Drive Train 2025</h3>
+              <p class="card__intent">VEX robotics competition drivetrain code.</p>
+              <div class="card__meta">
+                <span class="status status--wip">In Progress</span>
+                <time class="card__date mono">2025-01</time>
+              </div>
+              <div class="tags mt-4">
+                <span class="tag">robotics</span>
+                <span class="tag">competition</span>
+              </div>
+              <div class="card__links">
+                <a href="https://github.com/nirvaankohli/drive-train-2025" class="card__link-btn" target="_blank" rel="noopener">Repo →</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="../scripts/main.js"></script>
+  <script src="../scripts/projects.js"></script>
+</body>
+</html>

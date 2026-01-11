@@ -1,0 +1,124 @@
+{
+  "projects": [
+    {
+      "id": "omnilab",
+      "title": "OmniLab",
+      "intent": "A toolkit for VEX robotics coders—path planning, simulation, and team collaboration.",
+      "status": "wip",
+      "tags": ["robotics", "tools"],
+      "date": "2025-12",
+      "featured": true,
+      "image": "",
+      "repo": "https://github.com/nirvaankohli/OmniLab",
+      "demo": ""
+    },
+    {
+      "id": "culinary-atlas",
+      "title": "Culinary Atlas",
+      "intent": "Visualizes global recipe variations on an interactive map using multi-agent AI.",
+      "status": "shipped",
+      "tags": ["ai-agents", "visualization"],
+      "date": "2025-12",
+      "featured": true,
+      "image": "",
+      "repo": "https://github.com/nirvaankohli/culinary-atlas",
+      "demo": ""
+    },
+    {
+      "id": "argument-framework-engine",
+      "title": "Argument Framework Engine",
+      "intent": "Extracts arguments from debates, builds support/attack graphs, and visualizes who wins.",
+      "status": "shipped",
+      "tags": ["nlp", "graphs"],
+      "date": "2025-11",
+      "featured": true,
+      "image": "",
+      "repo": "https://github.com/nirvaankohli/argument-framework-engine",
+      "demo": ""
+    },
+    {
+      "id": "space-radar",
+      "title": "Space Radar",
+      "intent": "Multi-agent system that scours space news, clusters duplicates, and ranks what matters.",
+      "status": "shipped",
+      "tags": ["ai-agents", "news"],
+      "date": "2025-10",
+      "featured": false,
+      "image": "",
+      "repo": "https://github.com/nirvaankohli/space-radar",
+      "demo": ""
+    },
+    {
+      "id": "invasisee",
+      "title": "InvaSee",
+      "intent": "Identify and report invasive species using AI and crowd verification.",
+      "status": "shipped",
+      "tags": ["ai", "environment"],
+      "date": "2025-09",
+      "featured": false,
+      "image": "",
+      "repo": "https://github.com/nirvaankohli/invasisee",
+      "demo": ""
+    },
+    {
+      "id": "maze-pathfinding-lab",
+      "title": "Maze Pathfinding Lab",
+      "intent": "Compares BFS, DFS, Dijkstra, and A* with visual canvas and performance metrics.",
+      "status": "shipped",
+      "tags": ["algorithms", "visualization"],
+      "date": "2025-08",
+      "featured": false,
+      "image": "",
+      "repo": "https://github.com/nirvaankohli/maze-pathfinding-lab",
+      "demo": ""
+    },
+    {
+      "id": "boometer",
+      "title": "Boometer",
+      "intent": "Stream videos while monitoring fear reactions using ML emotion detection.",
+      "status": "shipped",
+      "tags": ["ml", "computer-vision"],
+      "date": "2025-07",
+      "featured": false,
+      "image": "",
+      "repo": "https://github.com/nirvaankohli/boometer",
+      "demo": ""
+    },
+    {
+      "id": "multimodal-exploring",
+      "title": "Multimodal Exploring",
+      "intent": "Experiments with multimodal image captioning models.",
+      "status": "research",
+      "tags": ["ml", "multimodal"],
+      "date": "2025-05",
+      "featured": false,
+      "image": "",
+      "repo": "https://github.com/nirvaankohli/multimodal-exploring",
+      "demo": ""
+    },
+    {
+      "id": "magic-cam",
+      "title": "Magic Cam",
+      "intent": "Computer vision where different hand gestures cast different spells.",
+      "status": "shipped",
+      "tags": ["computer-vision", "fun"],
+      "date": "2025-04",
+      "featured": false,
+      "image": "",
+      "repo": "https://github.com/nirvaankohli/magic-cam",
+      "demo": ""
+    },
+    {
+      "id": "drive-train-2025",
+      "title": "Drive Train 2025",
+      "intent": "VEX robotics competition drivetrain code.",
+      "status": "wip",
+      "tags": ["robotics", "competition"],
+      "date": "2025-01",
+      "featured": false,
+      "image": "",
+      "repo": "https://github.com/nirvaankohli/drive-train-2025",
+      "demo": ""
+    }
+  ]
+}

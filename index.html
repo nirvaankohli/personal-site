@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nirvaan Kohli — exploring AI, robotics, and computer vision. Building tools that learn and adapt.">
+  <title>Nirvaan Kohli</title>
+  
+  <link rel="stylesheet" href="styles/index.css">
+  <link rel="stylesheet" href="styles/components.css">
+</head>
+<body>
+  <!-- Scroll Progress Bar -->
+  <div class="scroll-progress" id="scroll-progress"></div>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="/" class="nav__logo">nirvaan.kohli</a>
+    <ul class="nav__links">
+      <li><a href="/" class="nav__link nav__link--active">Home</a></li>
+      <li><a href="/projects/" class="nav__link">Projects</a></li>
+      <li><a href="/events/" class="nav__link">Events</a></li>
+      <li><a href="https://blog.nirvaankohli.com" class="nav__link" target="_blank" rel="noopener">Blog</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <!-- Hero Scene -->
+    <section class="scene">
+      <div class="sticky">
+        <div class="section section--hero">
+          <div class="container">
+            <div class="hero__intro" data-scroll-animate>
+              <div class="hero__avatar">
+                <div class="hero__avatar-ring"></div>
+                <img src="/images/avatar.jpg" alt="Nirvaan Kohli" class="hero__avatar-img" />
+              </div>
+              <div class="hero__text">
+                <p class="hero__greeting">Hi, I'm</p>
+                <h1 class="hero__name">Nirvaan Kohli</h1>
+              </div>
+            </div>
+            <p class="hero__statement" data-scroll-animate>
+              Exploring the space where learning systems<br>
+              meet physical constraints.
+            </p>
+            <a href="#focus" class="hero__scroll-btn" data-scroll-animate aria-label="Scroll down">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Focus Areas Scene -->
+    <section class="scene" id="focus">
+      <div class="sticky">
+        <div class="section">
+          <div class="container">
+            <div class="section__header">
+              <h2 class="section__title" data-scroll-animate>Current Questions</h2>
+            </div>
+            <ul class="focus-list">
+              <li class="focus-item" data-scroll-animate>How can multi-agent systems collaborate to solve complex problems?</li>
+              <li class="focus-item" data-scroll-animate>What makes computer vision useful in the real world?</li>
+              <li class="focus-item" data-scroll-animate>How do we build robotics tools that teams actually want to use?</li>
+              <li class="focus-item" data-scroll-animate>Can AI help us understand and protect our environment?</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects Scene -->
+    <section class="scene">
+      <div class="sticky">
+        <div class="section">
+          <div class="container">
+            <div class="section__header">
+              <h2 class="section__title" data-scroll-animate>Featured Projects</h2>
+              <a href="/projects/" class="section__link" data-scroll-animate>View all →</a>
+            </div>
+            <div class="project-grid">
+              <!-- OmniLab -->
+              <article class="card" data-scroll-animate>
+                <a href="https://github.com/nirvaankohli/OmniLab" class="card__link" target="_blank" rel="noopener">
+                  <h3 class="card__title">OmniLab</h3>
+                  <p class="card__intent">A toolkit for VEX robotics coders—path planning, simulation, and team collaboration.</p>
+                  <div class="card__meta">
+                    <span class="status status--wip">In Progress</span>
+                    <span class="tag">robotics</span>
+                    <span class="tag">tools</span>
+                  </div>
+                </a>
+              </article>
+
+              <!-- Culinary Atlas -->
+              <article class="card" data-scroll-animate>
+                <a href="https://github.com/nirvaankohli/culinary-atlas" class="card__link" target="_blank" rel="noopener">
+                  <h3 class="card__title">Culinary Atlas</h3>
+                  <p class="card__intent">Visualizes global recipe variations on an interactive map using multi-agent AI.</p>
+                  <div class="card__meta">
+                    <span class="status status--shipped">Shipped</span>
+                    <span class="tag">ai-agents</span>
+                    <span class="tag">visualization</span>
+                  </div>
+                </a>
+              </article>
+
+              <!-- Argument Framework Engine -->
+              <article class="card" data-scroll-animate>
+                <a href="https://github.com/nirvaankohli/argument-framework-engine" class="card__link" target="_blank" rel="noopener">
+                  <h3 class="card__title">Argument Framework Engine</h3>
+                  <p class="card__intent">Extracts arguments from debates, builds support/attack graphs, and visualizes who wins.</p>
+                  <div class="card__meta">
+                    <span class="status status--shipped">Shipped</span>
+                    <span class="tag">nlp</span>
+                    <span class="tag">graphs</span>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Activity (from Events) -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Recent Activity</h2>
+          <a href="/events/" class="section__link">View all events →</a>
+        </div>
+        <div class="activity fade-in">
+          <time class="activity__date mono">2026-01-04</time>
+          <div class="activity__content">
+            <span class="activity__title">Sugar Rush</span> — 
+            VEX Robotics competition — made it to R16 in the Sugar Division, finishing 16th place.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title">Contact</h2>
+        </div>
+        <ul class="contact-links fade-in">
+          <li><a href="mailto:hello@nirvaankohli.com" class="contact-link">email</a></li>
+          <li><a href="https://github.com/nirvaankohli" class="contact-link" target="_blank" rel="noopener">github</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- Lenis Smooth Scroll CDN -->
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="scripts/main.js"></script>
+</body>
+</html>
