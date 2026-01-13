@@ -419,6 +419,7 @@ html.lenis, html.lenis body {
   justify-content: center;
 }
 
+
 .scene .sticky > * {
   will-change: transform, opacity;
 }
