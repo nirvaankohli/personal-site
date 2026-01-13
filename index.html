@@ -155,15 +155,13 @@
       const statusLabels = { research: 'Research', wip: 'In Progress', shipped: 'Shipped' };
       const statusClasses = { research: 'status--research', wip: 'status--wip', shipped: 'status--shipped' };
 
-      fetch('/data/projects.json')
+      fetch('data/projects.json')
         .then(res => res.json())
         .then(data => {
           const featured = data.projects.filter(p => p.featured);
           container.innerHTML = featured.map(project => {
-            let imagePath = project.image;
-            if (imagePath && !imagePath.startsWith('/') && !imagePath.startsWith('http')) {
-              imagePath = '/' + imagePath;
-            }
+            // Paths in JSON are relative to root (e.g. "images/...")
+            const imagePath = project.image;
             const imageHTML = imagePath ? 
               `<img src="${imagePath}" alt="${project.title}" class="card__image" loading="lazy" onload="this.classList.add('loaded')" />` : '';
             const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');

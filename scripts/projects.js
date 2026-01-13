@@ -26,7 +26,7 @@
 
   async function init() {
     try {
-      const response = await fetch('/data/projects.json');
+      const response = await fetch('../data/projects.json');
       const data = await response.json();
       projectsData = data.projects;
       renderFeatured();
@@ -41,10 +41,10 @@
   function createProjectHTML(project, isFeatured = false) {
     const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
     
-    // Fix image path - ensure it starts with /
+    // Fix image path - ensure it is relative for subpages
     let imagePath = project.image;
-    if (imagePath && !imagePath.startsWith('/') && !imagePath.startsWith('http')) {
-      imagePath = '/' + imagePath;
+    if (imagePath && !imagePath.startsWith('/') && !imagePath.startsWith('http') && !imagePath.startsWith('..')) {
+      imagePath = '../' + imagePath;
     }
     
     const imageHTML = imagePath ? 
