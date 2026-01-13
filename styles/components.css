@@ -132,9 +132,11 @@
 
 .hero__intro {
   display: flex;
+  flex-direction: row;
   align-items: center;
+  justify-content: center;
   gap: var(--space-4);
-  margin-bottom: var(--space-6);
+  margin-bottom: var(--space-3);
 }
 
 .hero__avatar {
@@ -211,7 +213,7 @@
   font-weight: 600;
   color: var(--text-primary);
   margin: 0;
-  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-primary) 100%);
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-tertiary) 80%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -225,6 +227,7 @@
   color: var(--text-primary);
   margin-bottom: var(--space-2);
   max-width: 600px;
+  text-align: center;
 }
 
 .hero__context {

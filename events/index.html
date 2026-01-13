@@ -6,6 +6,7 @@
   <meta name="description" content="Timeline of events, launches, and milestones by Nirvaan Kohli.">
   <title>Events — Nirvaan Kohli</title>
   
+  <link rel="icon" type="image/png" href="/images/logo/logo.png">
   <link rel="stylesheet" href="../styles/index.css">
   <link rel="stylesheet" href="../styles/components.css">
   <link rel="stylesheet" href="../styles/events.css">
@@ -13,12 +14,16 @@
 <body>
   <!-- Navigation -->
   <nav class="nav" role="navigation" aria-label="Main navigation">
-    <a href="/" class="nav__logo">nirvaan.kohli</a>
+    <a href="/" class="nav__logo">
+      <img src="/images/logo/logo.png" alt="NK" class="nav__logo-img" />
+      <span class="nav__logo-text">nirvaan.kohli</span>
+    </a>
     <ul class="nav__links">
       <li><a href="/" class="nav__link">Home</a></li>
       <li><a href="/projects/" class="nav__link">Projects</a></li>
       <li><a href="/events/" class="nav__link nav__link--active">Events</a></li>
       <li><a href="https://blog.nirvaankohli.com" class="nav__link" target="_blank" rel="noopener">Blog</a></li>
+      <li><a href="/#contact" class="nav__link">Contact</a></li>
     </ul>
   </nav>
 
@@ -59,6 +64,14 @@
             <button class="filter-btn" data-filter="hackathon" data-filter-type="tag">hackathon</button>
           </div>
         </div>
+        <!-- Sort Filter -->
+        <div class="filter-section fade-in">
+          <span class="filter-label mono">Sort</span>
+          <div class="filter-bar">
+            <button class="filter-btn filter-btn--active" data-sort="newest" data-filter-type="sort">Newest First</button>
+            <button class="filter-btn" data-sort="oldest" data-filter-type="sort">Oldest First</button>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -66,49 +79,7 @@
     <section class="section">
       <div class="container">
         <div class="timeline" id="timeline">
-          
-          <!-- Sugar Rush -->
-          <article class="timeline__item fade-in" data-type="hackathon" data-tags="robotics,vex">
-            <div class="timeline__marker timeline__marker--hackathon"></div>
-            <div class="timeline__content">
-              <img src="/images/events/sugar_rush.jpg" alt="Sugar Rush competition" class="timeline__image" />
-              <time class="timeline__date mono">Jan 4-5, 2026</time>
-              <h3 class="timeline__title">Sugar Rush</h3>
-              <p class="timeline__description">VEX Robotics competition — made it to R16 in the Sugar Division, finishing 16th place.</p>
-              <div class="timeline__meta">
-                <span class="timeline__type timeline__type--hackathon">Competition</span>
-                <span class="tag">robotics</span>
-                <span class="tag">vex</span>
-              </div>
-            </div>
-          </article>
-          
-          <!--
-          EXAMPLE EVENT (copy this template):
-          
-          <article class="timeline__item fade-in" data-type="launch">
-            <div class="timeline__marker timeline__marker--launch"></div>
-            <div class="timeline__content">
-              <img src="/images/events/example.jpg" alt="Event image" class="timeline__image" />
-              <time class="timeline__date mono">Dec 2025</time>
-              <h3 class="timeline__title">Event Title</h3>
-              <p class="timeline__description">Description of what happened.</p>
-              <div class="timeline__meta">
-                <span class="timeline__type timeline__type--launch">Launch</span>
-                <span class="tag">tag</span>
-              </div>
-              <a href="https://example.com" class="timeline__link" target="_blank" rel="noopener">View →</a>
-            </div>
-          </article>
-          
-          EVENT TYPES:
-          - launch (green marker) — use timeline__marker--launch
-          - project (default gray marker)
-          - hackathon (amber marker) — use timeline__marker--hackathon
-          - talk (default gray marker)
-          - award (default gray marker)
-          -->
-
+          <!-- Events loaded dynamically from /data/events.json -->
         </div>
       </div>
     </section>

@@ -1,3 +1,15 @@
 {
-  "events": []
+  "events": [
+    {
+      "id": "sugar-rush",
+      "title": "Sugar Rush",
+      "description": "VEX Robotics competition — made it to R16 in the Sugar Division, finishing 16th place.",
+      "date": "2026-01-04",
+      "dateDisplay": "Jan 4-5, 2026",
+      "type": "hackathon",
+      "tags": ["robotics", "vex"],
+      "image": "/images/events/sugar_rush.jpg",
+      "link": ""
+    }
+  ]
 }

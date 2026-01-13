@@ -7,6 +7,29 @@
   'use strict';
 
   // ============================================
+  // Hide Loader with Curtain Reveal
+  // ============================================
+  
+  const loader = document.getElementById('loader');
+  const curtain = document.getElementById('curtain');
+  
+  if (loader) {
+    window.addEventListener('load', () => {
+      // Phase 1: Fade out loader (after 500ms)
+      setTimeout(() => {
+        loader.classList.add('loaded');
+        
+        // Phase 2: Reveal curtain (after loader fades)
+        setTimeout(() => {
+          if (curtain) {
+            curtain.classList.add('revealed');
+          }
+        }, 400);
+      }, 600);
+    });
+  }
+
+  // ============================================
   // Lenis Smooth Scroll (overclock.co style)
   // ============================================
   
