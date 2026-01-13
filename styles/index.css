@@ -424,13 +424,14 @@ html.lenis, html.lenis body {
 }
 
 /* Scroll-driven animations */
-.scene [data-scroll-animate] {
+/* Scroll-driven animations */
+[data-scroll-animate] {
   opacity: 0;
   transform: translateY(40px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.scene [data-scroll-animate].in-view {
+[data-scroll-animate].in-view {
   opacity: 1;
   transform: translateY(0);
 }

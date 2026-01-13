@@ -8,9 +8,9 @@
       "tags": ["robotics", "tools"],
       "date": "2025-12",
       "featured": true,
-      "image": "",
+      "image": "images/screenshots/omnilab.png",
       "repo": "https://github.com/nirvaankohli/OmniLab",
-      "demo": ""
+      "demo": "https://robotics.nirvaankohli.com/"
     },
     {
       "id": "culinary-atlas",
@@ -19,10 +19,10 @@
       "status": "shipped",
       "tags": ["ai-agents", "visualization"],
       "date": "2025-12",
-      "featured": true,
-      "image": "",
+      "featured": false,
+      "image": "images/screenshots/culinary_atlas.png",
       "repo": "https://github.com/nirvaankohli/culinary-atlas",
-      "demo": ""
+      "demo": "https://culinary-atlas.nirvaankohli.com/"
     },
     {
       "id": "argument-framework-engine",
@@ -32,9 +32,9 @@
       "tags": ["nlp", "graphs"],
       "date": "2025-11",
       "featured": true,
-      "image": "",
+      "image": "images/screenshots/argument_framework_engine.png",
       "repo": "https://github.com/nirvaankohli/argument-framework-engine",
-      "demo": ""
+      "demo": "https://argument-framework-engine.streamlit.app/"
     },
     {
       "id": "space-radar",
@@ -43,15 +43,15 @@
       "status": "shipped",
       "tags": ["ai-agents", "news"],
       "date": "2025-10",
-      "featured": false,
-      "image": "",
+      "featured": true,
+      "image": "images/screenshots/space_radar.png",
       "repo": "https://github.com/nirvaankohli/space-radar",
       "demo": ""
     },
     {
       "id": "invasisee",
       "title": "InvaSee",
-      "intent": "Identify and report invasive species using AI and crowd verification.",
+      "intent": "Identify and report invasive species using AI and crowd verification. For HackPHS.",
       "status": "shipped",
       "tags": ["ai", "environment"],
       "date": "2025-09",
@@ -68,7 +68,7 @@
       "tags": ["algorithms", "visualization"],
       "date": "2025-08",
       "featured": false,
-      "image": "",
+      "image": "images/screenshots/maze_pathfinding_lab.png",
       "repo": "https://github.com/nirvaankohli/maze-pathfinding-lab",
       "demo": ""
     },
@@ -79,10 +79,10 @@
       "status": "shipped",
       "tags": ["ml", "computer-vision"],
       "date": "2025-07",
-      "featured": false,
-      "image": "",
+      "featured": true,
+      "image": "images/screenshots/boometer.png",
       "repo": "https://github.com/nirvaankohli/boometer",
-      "demo": ""
+      "demo": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/b75988a6c524ca936c033af50562afb6ee7082fd_untitled_video__1_.mp4"
     },
     {
       "id": "multimodal-exploring",
@@ -94,7 +94,7 @@
       "featured": false,
       "image": "",
       "repo": "https://github.com/nirvaankohli/multimodal-exploring",
-      "demo": ""
+      "demo": "https://github.com/nirvaankohli/multimodal-exploring/blob/main/README.md"
     },
     {
       "id": "magic-cam",
@@ -103,22 +103,36 @@
       "status": "shipped",
       "tags": ["computer-vision", "fun"],
       "date": "2025-04",
-      "featured": false,
-      "image": "",
+      "featured": true,
+      "image": "images/screenshots/magic_cam.png",
       "repo": "https://github.com/nirvaankohli/magic-cam",
-      "demo": ""
+      "demo": "https://magic-cam.streamlit.app/"
     },
     {
+      
       "id": "drive-train-2025",
       "title": "Drive Train 2025",
       "intent": "VEX robotics competition drivetrain code.",
-      "status": "wip",
+      "status": "shipped",
       "tags": ["robotics", "competition"],
       "date": "2025-01",
       "featured": false,
       "image": "",
       "repo": "https://github.com/nirvaankohli/drive-train-2025",
       "demo": ""
+    },
+
+    {
+      "id": "when-things-fall-apart",
+      "title": "When Things Fall Apart",
+      "intent": "A comprehensive Twitter sentiment analysis tool that scrapes user tweets and analyzes emotional patterns over time, with a special focus on identifying periods of sustained negativity(falls).",
+      "status": "shipped",
+      "tags": ["ml", "twitter", "sentiment"],
+      "date": "2025-10",
+      "featured": true,
+      "image": "images/screenshots/when_things_fall_apart.png",
+      "repo": "https://github.com/nirvaankohli/when-things-fall-apart",
+      "demo": "https://hc-cdn.hel1.your-objectstorage.com/s/v3/d1c6ecb68f884e269c1f926043e109a68c6daa85_screen_recording_2025-10-26_181314.mp4"
     }
   ]
 }

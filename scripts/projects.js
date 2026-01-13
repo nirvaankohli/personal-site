@@ -1,16 +1,17 @@
 /**
- * Projects Page — Fetches from JSON, renders cards, with filtering + click handling
+ * Projects Page — Fetches from JSON, renders featured + all projects, with filtering + sorting
  */
 
 (function() {
   'use strict';
 
+  const featuredGrid = document.getElementById('featured-grid');
   const projectGrid = document.getElementById('project-grid');
   let projectsData = [];
   let activeStatus = 'all';
   let activeTag = 'all';
+  let activeSort = 'newest';
 
-  // Status labels for display
   const statusLabels = {
     research: 'Research',
     wip: 'In Progress',
@@ -23,24 +24,31 @@
     shipped: 'status--shipped'
   };
 
-  // Fetch and render projects
   async function init() {
     try {
       const response = await fetch('/data/projects.json');
       const data = await response.json();
       projectsData = data.projects;
+      renderFeatured();
       renderProjects();
       setupFilters();
     } catch (error) {
       console.error('Failed to load projects:', error);
-      projectGrid.innerHTML = '<p>Failed to load projects.</p>';
+      if (projectGrid) projectGrid.innerHTML = '<p>Failed to load projects.</p>';
     }
   }
 
-  function createProjectHTML(project) {
+  function createProjectHTML(project, isFeatured = false) {
     const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
-    const imageHTML = project.image ? 
-      `<img src="${project.image}" alt="${project.title}" class="card__image" />` : 
+    
+    // Fix image path - ensure it starts with /
+    let imagePath = project.image;
+    if (imagePath && !imagePath.startsWith('/') && !imagePath.startsWith('http')) {
+      imagePath = '/' + imagePath;
+    }
+    
+    const imageHTML = imagePath ? 
+      `<img src="${imagePath}" alt="${project.title}" class="card__image" loading="lazy" />` : 
       '<div class="card__image-placeholder"></div>';
     
     const repoLink = project.repo ? 
@@ -48,8 +56,10 @@
     const demoLink = project.demo ? 
       `<a href="${project.demo}" class="card__link-btn" target="_blank" rel="noopener">Demo →</a>` : '';
 
+    const cardClass = isFeatured ? 'card card--featured' : 'card';
+
     return `
-      <article class="card fade-in visible" data-status="${project.status}" data-tags="${project.tags.join(',')}" data-repo="${project.repo || ''}" data-demo="${project.demo || ''}">
+      <article class="${cardClass} fade-in visible" data-status="${project.status}" data-tags="${project.tags.join(',')}" data-repo="${project.repo || ''}" data-demo="${project.demo || ''}" data-date="${project.date}">
         ${imageHTML}
         <div class="card__content">
           <h3 class="card__title">${project.title}</h3>
@@ -70,25 +80,46 @@
     `;
   }
 
+  function renderFeatured() {
+    if (!featuredGrid) return;
+    
+    const featured = projectsData.filter(p => p.featured);
+    if (featured.length === 0) {
+      featuredGrid.parentElement.style.display = 'none';
+      return;
+    }
+    
+    featuredGrid.innerHTML = featured.map(p => createProjectHTML(p, true)).join('');
+    setupCardClicks(featuredGrid);
+  }
+
   function renderProjects() {
-    // Filter projects
-    const filtered = projectsData.filter(project => {
+    if (!projectGrid) return;
+
+    // Filter
+    let filtered = projectsData.filter(project => {
       const matchesStatus = activeStatus === 'all' || project.status === activeStatus;
       const matchesTag = activeTag === 'all' || project.tags.includes(activeTag);
       return matchesStatus && matchesTag;
     });
 
-    // Render
+    // Sort
+    filtered = [...filtered].sort((a, b) => {
+      const dateA = new Date(a.date + '-01');
+      const dateB = new Date(b.date + '-01');
+      return activeSort === 'newest' ? dateB - dateA : dateA - dateB;
+    });
+
     if (filtered.length === 0) {
       projectGrid.innerHTML = '<p>No projects match the current filters.</p>';
     } else {
-      projectGrid.innerHTML = filtered.map(createProjectHTML).join('');
-      setupCardClicks();
+      projectGrid.innerHTML = filtered.map(p => createProjectHTML(p)).join('');
+      setupCardClicks(projectGrid);
     }
   }
 
-  function setupCardClicks() {
-    document.querySelectorAll('.card[data-status]').forEach(card => {
+  function setupCardClicks(container) {
+    container.querySelectorAll('.card').forEach(card => {
       card.style.cursor = 'pointer';
       card.addEventListener('click', (e) => {
         if (e.target.closest('.card__link-btn')) return;
@@ -124,9 +155,18 @@
         renderProjects();
       });
     });
+
+    // Sort
+    document.querySelectorAll('.filter-btn[data-filter-type="sort"]').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeSort = btn.dataset.sort;
+        document.querySelectorAll('.filter-btn[data-filter-type="sort"]').forEach(b => b.classList.remove('filter-btn--active'));
+        btn.classList.add('filter-btn--active');
+        renderProjects();
+      });
+    });
   }
 
-  // Initialize
   init();
 
 })();

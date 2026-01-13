@@ -98,56 +98,15 @@
       </div>
     </section>
 
-    <!-- Featured Projects Scene -->
-    <section class="scene">
-      <div class="sticky">
-        <div class="section">
-          <div class="container">
-            <div class="section__header">
-              <h2 class="section__title" data-scroll-animate>Featured Projects</h2>
-              <a href="/projects/" class="section__link" data-scroll-animate>View all →</a>
-            </div>
-            <div class="project-grid">
-              <!-- OmniLab -->
-              <article class="card" data-scroll-animate>
-                <a href="https://github.com/nirvaankohli/OmniLab" class="card__link" target="_blank" rel="noopener">
-                  <h3 class="card__title">OmniLab</h3>
-                  <p class="card__intent">A toolkit for VEX robotics coders—path planning, simulation, and team collaboration.</p>
-                  <div class="card__meta">
-                    <span class="status status--wip">In Progress</span>
-                    <span class="tag">robotics</span>
-                    <span class="tag">tools</span>
-                  </div>
-                </a>
-              </article>
-
-              <!-- Culinary Atlas -->
-              <article class="card" data-scroll-animate>
-                <a href="https://github.com/nirvaankohli/culinary-atlas" class="card__link" target="_blank" rel="noopener">
-                  <h3 class="card__title">Culinary Atlas</h3>
-                  <p class="card__intent">Visualizes global recipe variations on an interactive map using multi-agent AI.</p>
-                  <div class="card__meta">
-                    <span class="status status--shipped">Shipped</span>
-                    <span class="tag">ai-agents</span>
-                    <span class="tag">visualization</span>
-                  </div>
-                </a>
-              </article>
-
-              <!-- Argument Framework Engine -->
-              <article class="card" data-scroll-animate>
-                <a href="https://github.com/nirvaankohli/argument-framework-engine" class="card__link" target="_blank" rel="noopener">
-                  <h3 class="card__title">Argument Framework Engine</h3>
-                  <p class="card__intent">Extracts arguments from debates, builds support/attack graphs, and visualizes who wins.</p>
-                  <div class="card__meta">
-                    <span class="status status--shipped">Shipped</span>
-                    <span class="tag">nlp</span>
-                    <span class="tag">graphs</span>
-                  </div>
-                </a>
-              </article>
-            </div>
-          </div>
+    <!-- Featured Projects (Normal Flow) -->
+    <section class="section">
+      <div class="container">
+        <div class="section__header">
+          <h2 class="section__title" data-scroll-animate>Featured Projects</h2>
+          <a href="/projects/" class="section__link" data-scroll-animate>View all →</a>
+        </div>
+        <div class="project-grid" id="home-featured-projects">
+          <!-- Featured projects loaded dynamically from /data/projects.json -->
         </div>
       </div>
     </section>
@@ -186,5 +145,57 @@
   <!-- Lenis Smooth Scroll CDN -->
   <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
   <script src="scripts/main.js"></script>
+  
+  <!-- Featured Projects on Homepage -->
+  <script>
+    (function() {
+      const container = document.getElementById('home-featured-projects');
+      if (!container) return;
+
+      const statusLabels = { research: 'Research', wip: 'In Progress', shipped: 'Shipped' };
+      const statusClasses = { research: 'status--research', wip: 'status--wip', shipped: 'status--shipped' };
+
+      fetch('/data/projects.json')
+        .then(res => res.json())
+        .then(data => {
+          const featured = data.projects.filter(p => p.featured);
+          container.innerHTML = featured.map(project => {
+            let imagePath = project.image;
+            if (imagePath && !imagePath.startsWith('/') && !imagePath.startsWith('http')) {
+              imagePath = '/' + imagePath;
+            }
+            const imageHTML = imagePath ? 
+              `<img src="${imagePath}" alt="${project.title}" class="card__image" loading="lazy" />` : '';
+            const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+            const link = project.demo || project.repo;
+            
+            return `
+              <article class="card" data-scroll-animate>
+                <a href="${link}" class="card__link" target="_blank" rel="noopener">
+                  ${imageHTML}
+                  <h3 class="card__title">${project.title}</h3>
+                  <p class="card__intent">${project.intent}</p>
+                  <div class="card__meta">
+                    <span class="status ${statusClasses[project.status] || ''}">${statusLabels[project.status] || project.status}</span>
+                    ${tagsHTML}
+                  </div>
+                </a>
+              </article>
+            `;
+          }).join('');
+          
+          // Register new cards for scroll animation
+          container.querySelectorAll('[data-scroll-animate]').forEach(el => {
+            if (window.observeForScrollAnimation) {
+              window.observeForScrollAnimation(el);
+            } else {
+              // Fallback if observer not ready
+              el.classList.add('in-view');
+            }
+          });
+        })
+        .catch(err => console.error('Failed to load featured projects:', err));
+    })();
+  </script>
 </body>
 </html>

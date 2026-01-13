@@ -38,6 +38,18 @@
       </div>
     </section>
 
+    <!-- Featured Projects -->
+    <section class="section section--featured">
+      <div class="container container--wide">
+        <div class="section__header">
+          <h2 class="section__title">Featured</h2>
+        </div>
+        <div class="project-grid project-grid--featured" id="featured-grid">
+          <!-- Featured projects loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
     <!-- Filters -->
     <section class="section section--compact">
       <div class="container container--wide">
@@ -64,12 +76,23 @@
             <button class="filter-btn" data-filter="algorithms" data-filter-type="tag">algorithms</button>
           </div>
         </div>
+        <!-- Sort -->
+        <div class="filter-section fade-in">
+          <span class="filter-label mono">Sort</span>
+          <div class="filter-bar">
+            <button class="filter-btn filter-btn--active" data-sort="newest" data-filter-type="sort">Newest First</button>
+            <button class="filter-btn" data-sort="oldest" data-filter-type="sort">Oldest First</button>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- Project Grid -->
+    <!-- All Projects Grid -->
     <section class="section">
       <div class="container container--wide">
+        <div class="section__header">
+          <h2 class="section__title">All Projects</h2>
+        </div>
         <div class="project-grid" id="project-grid">
           <!-- Projects loaded dynamically from /data/projects.json -->
         </div>

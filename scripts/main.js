@@ -86,6 +86,11 @@
     scrollObserver.observe(el);
   });
 
+  // Expose observer globally for dynamic content
+  window.observeForScrollAnimation = function(element) {
+    scrollObserver.observe(element);
+  };
+
   // ============================================
   // Fade-in on scroll (legacy support)
   // ============================================
