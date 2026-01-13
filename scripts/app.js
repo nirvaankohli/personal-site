@@ -31,8 +31,8 @@
 
     window.addEventListener('load', hideLoader);
     
-    // Safety fallback: Force hide after 3.5s max (in case a resource hangs)
-    setTimeout(hideLoader, 3500);
+    // Safety fallback: Force hide after 1.5s max (in case a resource hangs)
+    setTimeout(hideLoader, 1500);
   }
 
   // ============================================
