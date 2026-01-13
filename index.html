@@ -165,7 +165,7 @@
               imagePath = '/' + imagePath;
             }
             const imageHTML = imagePath ? 
-              `<img src="${imagePath}" alt="${project.title}" class="card__image" loading="lazy" />` : '';
+              `<img src="${imagePath}" alt="${project.title}" class="card__image" loading="lazy" onload="this.classList.add('loaded')" />` : '';
             const tagsHTML = project.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
             const link = project.demo || project.repo;
             

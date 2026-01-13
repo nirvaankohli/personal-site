@@ -48,7 +48,7 @@
     }
     
     const imageHTML = imagePath ? 
-      `<img src="${imagePath}" alt="${project.title}" class="card__image" loading="lazy" />` : 
+      `<img src="${imagePath}" alt="${project.title}" class="card__image" loading="lazy" onload="this.classList.add('loaded')" />` : 
       '<div class="card__image-placeholder"></div>';
     
     const repoLink = project.repo ? 
