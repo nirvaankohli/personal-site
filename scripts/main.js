@@ -14,19 +14,25 @@
   const curtain = document.getElementById('curtain');
   
   if (loader) {
-    window.addEventListener('load', () => {
-      // Phase 1: Fade out loader (after 500ms)
+    const hideLoader = () => {
+      // Phase 1: Fade out loader
       setTimeout(() => {
+        if (loader.classList.contains('loaded')) return; 
         loader.classList.add('loaded');
         
-        // Phase 2: Reveal curtain (after loader fades)
+        // Phase 2: Reveal curtain
         setTimeout(() => {
           if (curtain) {
             curtain.classList.add('revealed');
           }
         }, 400);
       }, 600);
-    });
+    };
+
+    window.addEventListener('load', hideLoader);
+    
+    // Safety fallback: Force hide after 3.5s max (in case a resource hangs)
+    setTimeout(hideLoader, 3500);
   }
 
   // ============================================
