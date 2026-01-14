@@ -25,16 +25,46 @@
   };
 
   async function init() {
-    try {
-      const response = await fetch('../data/projects.json');
-      const data = await response.json();
-      projectsData = data.projects;
+    // Try multiple paths to ensure we find the JSON file
+    const paths = [
+      '../data/projects.json', // Standard relative path
+      'data/projects.json',    // Root relative (if cached/root)
+      '/data/projects.json',   // Absolute fallback
+      'https://nirvaankohli.com/data/projects.json' // Hardcoded Production Fallback
+    ];
+
+    let loaded = false;
+    let errorMsg = '';
+
+    for (const path of paths) {
+      try {
+        const response = await fetch(path);
+        if (response.ok) {
+          const data = await response.json();
+          projectsData = data.projects;
+          loaded = true;
+          break; // Exit loop on success
+        }
+      } catch (err) {
+        errorMsg = err.message;
+        console.warn(`Failed to fetch from ${path}:`, err);
+      }
+    }
+
+    if (loaded) {
       renderFeatured();
       renderProjects();
       setupFilters();
-    } catch (error) {
-      console.error('Failed to load projects:', error);
-      if (projectGrid) projectGrid.innerHTML = '<p>Failed to load projects.</p>';
+    } else {
+      console.error('All fetch attempts failed.');
+      if (projectGrid) {
+        projectGrid.innerHTML = `
+          <div style="text-align: center; color: var(--text-secondary);">
+            <p>Unable to load projects.</p>
+            <p class="mono" style="font-size: 0.8em; margin-top: 8px;">Error: ${errorMsg || 'File not found'}</p>
+          </div>
+        `;
+      }
     }
   }
 
