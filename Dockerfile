@@ -1,14 +1,14 @@
-# Use nginx alpine for small image size
-FROM nginx:alpine
+FROM python:3.11-slim
 
-# Copy static files to nginx html directory
-COPY . /usr/share/nginx/html
+WORKDIR /app
 
-# Copy custom nginx config for SPA-like routing
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
 
-# Expose port 80
+COPY . .
+
+ENV PORT=80
+
 EXPOSE 80
 
-# Start nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["gunicorn", "--bind", "0.0.0.0:80", "--workers", "2", "--threads", "4", "--timeout", "120", "app:app"]

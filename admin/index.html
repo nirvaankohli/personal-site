@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Admin Dashboard</title>
+
+  <link rel="icon" type="image/png" href="/images/logo/logo.png">
+  <link rel="stylesheet" href="/styles/global.css">
+  <link rel="stylesheet" href="/styles/ui.css">
+  <link rel="stylesheet" href="/styles/admin.css?v=1">
+</head>
+<body>
+  <nav class="nav" role="navigation" aria-label="Admin navigation">
+    <a href="/" class="nav__logo">
+      <img src="/images/logo/logo.png" alt="NK" class="nav__logo-img" />
+      <span class="nav__logo-text">admin</span>
+    </a>
+    <ul class="nav__links">
+      <li><a href="/" class="nav__link">View Site</a></li>
+      <li><button class="admin-nav-btn" id="logout-btn" type="button">Log out</button></li>
+    </ul>
+  </nav>
+
+  <main class="admin-main">
+    <section class="section section--page-header">
+      <div class="container container--wide">
+        <h1 class="page-title">Dashboard</h1>
+        <p class="page-subtitle">Manage projects, events, and uploaded images.</p>
+      </div>
+    </section>
+
+    <section class="section section--compact" id="login-shell">
+      <div class="container">
+        <div class="admin-card admin-card--auth">
+          <div class="section__header">
+            <h2 class="section__title">Sign In</h2>
+          </div>
+          <form id="login-form" class="admin-form">
+            <label class="admin-field">
+              <span class="admin-label">Username</span>
+              <input class="admin-input" name="username" type="text" autocomplete="username" required>
+            </label>
+            <label class="admin-field">
+              <span class="admin-label">Password</span>
+              <input class="admin-input" name="password" type="password" autocomplete="current-password" required>
+            </label>
+            <div class="admin-actions">
+              <button class="admin-btn admin-btn--primary" type="submit">Sign In</button>
+            </div>
+            <p class="admin-note">Default username is <code>admin</code>. Change the password with the server environment variables.</p>
+            <p class="admin-message" id="login-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section admin-shell hidden" id="dashboard-shell">
+      <div class="container container--wide">
+        <div class="admin-layout">
+          <article class="admin-card">
+            <div class="section__header">
+              <h2 class="section__title">Projects</h2>
+              <button class="admin-btn" type="button" id="new-project-btn">New Project</button>
+            </div>
+            <div class="admin-workspace">
+              <aside class="admin-list-panel">
+                <div class="admin-list" id="project-list"></div>
+              </aside>
+              <form class="admin-form admin-editor" id="project-form">
+                <label class="admin-field">
+                  <span class="admin-label">ID</span>
+                  <input class="admin-input" name="id" type="text" placeholder="auto-from-title">
+                </label>
+                <label class="admin-field">
+                  <span class="admin-label">Title</span>
+                  <input class="admin-input" name="title" type="text" required>
+                </label>
+                <label class="admin-field">
+                  <span class="admin-label">Intent</span>
+                  <textarea class="admin-input admin-textarea" name="intent" rows="4"></textarea>
+                </label>
+                <div class="admin-grid">
+                  <label class="admin-field">
+                    <span class="admin-label">Status</span>
+                    <select class="admin-input" name="status">
+                      <option value="research">Research</option>
+                      <option value="wip">In Progress</option>
+                      <option value="shipped">Shipped</option>
+                    </select>
+                  </label>
+                  <label class="admin-field">
+                    <span class="admin-label">Date</span>
+                    <input class="admin-input" name="date" type="text" placeholder="2026-04">
+                  </label>
+                </div>
+                <label class="admin-field admin-checkbox">
+                  <input name="featured" type="checkbox">
+                  <span>Show on the home page featured list</span>
+                </label>
+                <label class="admin-field">
+                  <span class="admin-label">Tags</span>
+                  <input class="admin-input" name="tags" type="text" placeholder="robotics, ai-agents">
+                </label>
+                <label class="admin-field">
+                  <span class="admin-label">Repo URL</span>
+                  <input class="admin-input" name="repo" type="url">
+                </label>
+                <label class="admin-field">
+                  <span class="admin-label">Demo URL</span>
+                  <input class="admin-input" name="demo" type="url">
+                </label>
+                <label class="admin-field">
+                  <span class="admin-label">Image Path</span>
+                  <input class="admin-input" name="image" type="text" placeholder="/images/screenshots/example.png">
+                </label>
+                <div class="admin-upload">
+                  <input class="admin-input" id="project-image-file" type="file" accept=".png,.jpg,.jpeg,.gif,.webp,.svg">
+                  <button class="admin-btn" type="button" id="upload-project-image-btn">Upload Project Image</button>
+                </div>
+                <img class="admin-preview hidden" id="project-image-preview" alt="Project preview">
+                <div class="admin-actions">
+                  <button class="admin-btn admin-btn--primary" type="submit">Save Project</button>
+                  <button class="admin-btn admin-btn--danger" type="button" id="delete-project-btn">Delete</button>
+                </div>
+                <p class="admin-message" id="project-message" aria-live="polite"></p>
+              </form>
+            </div>
+          </article>
+
+          <article class="admin-card">
+            <div class="section__header">
+              <h2 class="section__title">Events</h2>
+              <button class="admin-btn" type="button" id="new-event-btn">New Event</button>
+            </div>
+            <div class="admin-workspace">
+              <aside class="admin-list-panel">
+                <div class="admin-list" id="event-list"></div>
+              </aside>
+              <form class="admin-form admin-editor" id="event-form">
+                <label class="admin-field">
+                  <span class="admin-label">ID</span>
+                  <input class="admin-input" name="id" type="text" placeholder="auto-from-title">
+                </label>
+                <label class="admin-field">
+                  <span class="admin-label">Title</span>
+                  <input class="admin-input" name="title" type="text" required>
+                </label>
+                <label class="admin-field">
+                  <span class="admin-label">Description</span>
+                  <textarea class="admin-input admin-textarea" name="description" rows="4"></textarea>
+                </label>
+                <div class="admin-grid">
+                  <label class="admin-field">
+                    <span class="admin-label">Date</span>
+                    <input class="admin-input" name="date" type="date">
+                  </label>
+                  <label class="admin-field">
+                    <span class="admin-label">Display Date</span>
+                    <input class="admin-input" name="dateDisplay" type="text" placeholder="Apr 13, 2026">
+                  </label>
+                </div>
+                <div class="admin-grid">
+                  <label class="admin-field">
+                    <span class="admin-label">Type</span>
+                    <select class="admin-input" name="type">
+                      <option value="launch">Launch</option>
+                      <option value="project">Project</option>
+                      <option value="hackathon">Competition</option>
+                      <option value="talk">Talk</option>
+                      <option value="award">Award</option>
+                    </select>
+                  </label>
+                  <label class="admin-field">
+                    <span class="admin-label">Tags</span>
+                    <input class="admin-input" name="tags" type="text" placeholder="robotics, vex">
+                  </label>
+                </div>
+                <label class="admin-field">
+                  <span class="admin-label">Link</span>
+                  <input class="admin-input" name="link" type="url">
+                </label>
+                <label class="admin-field">
+                  <span class="admin-label">Image Path</span>
+                  <input class="admin-input" name="image" type="text" placeholder="/images/events/example.jpg">
+                </label>
+                <div class="admin-upload">
+                  <input class="admin-input" id="event-image-file" type="file" accept=".png,.jpg,.jpeg,.gif,.webp,.svg">
+                  <button class="admin-btn" type="button" id="upload-event-image-btn">Upload Event Image</button>
+                </div>
+                <img class="admin-preview hidden" id="event-image-preview" alt="Event preview">
+                <div class="admin-actions">
+                  <button class="admin-btn admin-btn--primary" type="submit">Save Event</button>
+                  <button class="admin-btn admin-btn--danger" type="button" id="delete-event-btn">Delete</button>
+                </div>
+                <p class="admin-message" id="event-message" aria-live="polite"></p>
+              </form>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="/scripts/admin.js"></script>
+</body>
+</html>
