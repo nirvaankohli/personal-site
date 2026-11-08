@@ -1,0 +1,28 @@
+{
+  "order": 3,
+  "slug": "omnilab",
+  "portfolio": "programming",
+  "title": "OmniLab",
+  "type": "Robotics · tool",
+  "year": "2025–26",
+  "description": "A 3D workspace for VEX teams to plan autonomous paths and preview how a robot moves across the field.",
+  "cover": {
+    "src": "/projects/omnilab.png",
+    "alt": "OmniLab robot path planning interface"
+  },
+  "tools": ["React", "Three.js", "React Three Fiber", "VEX"],
+  "details": [
+    "OmniLab gives VEX coders a field-scale place to sketch an autonomous route before testing it on a physical robot. You can switch between the match and skills field layouts and place waypoints directly on the field.",
+    "The planner connects waypoints with smooth curves and lets you edit positions and the starting pose. It can load an STL robot model, scale it to the robot's dimensions, and play the planned motion in 3D.",
+    "I built the view with React Three Fiber and Three.js so the field, robot, and path live in the same interactive scene."
+  ],
+  "highlights": ["Editable waypoints and curved paths", "Match and skills field views", "STL robot preview and playback"],
+  "gallery": [
+    { "src": "/projects/omnilab-match-field.png", "alt": "VEX match field layout used in OmniLab", "caption": "Match field" },
+    { "src": "/projects/omnilab-skills-field.png", "alt": "VEX skills field layout used in OmniLab", "caption": "Skills field" }
+  ],
+  "links": [
+    { "label": "Website", "url": "https://robotics.nirvaankohli.com/" },
+    { "label": "GitHub", "url": "https://github.com/nirvaankohli/OmniLab" }
+  ]
+}

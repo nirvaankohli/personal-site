@@ -1,0 +1,28 @@
+{
+  "order": 2,
+  "slug": "echo",
+  "portfolio": "programming",
+  "title": "Echo",
+  "type": "AI · systems",
+  "year": "2026",
+  "description": "An event-driven personal agent that connects iMessage, local tools, and an AI worker across two macOS accounts.",
+  "cover": {
+    "src": "/projects/echo-workspace.png",
+    "alt": "Echo workspace showing connected apps and account controls"
+  },
+  "tools": ["Python", "OpenAI API", "MCP", "iMessage"],
+  "details": [
+    "Echo starts with an iMessage. A separate macOS login reads and sends messages, while the main login holds the OpenAI key, agent logic, and tool connections. They communicate over authenticated loopback HTTP on the same Mac.",
+    "The agent can use connected MCP tools and return its result through Messages. The split keeps the messaging bridge away from the main login's credentials and avoids a public server.",
+    "It also saves one-time and recurring schedules. A reminder can send a simple message later, while a scheduled job can run the normal agent workflow. The private dashboard shows connections, schedules, and recent work."
+  ],
+  "highlights": ["Local, authenticated Messages bridge", "MCP-connected agent workflow", "One-time and recurring schedules"],
+  "gallery": [
+    { "src": "/projects/echo-imessage.png", "alt": "An iMessage conversation with Echo about upcoming class assignments", "caption": "Asking Echo about upcoming work", "group": "In use", "orientation": "portrait" },
+    { "src": "/projects/echo-message-flow.png", "alt": "Five steps from receiving an iMessage to delivering Echo's answer", "caption": "From text to answer", "group": "How it works", "orientation": "wide" },
+    { "src": "/projects/echo-system-map.png", "alt": "Echo system map connecting iPhone Messages, a Mac bridge, the agent, services, and Codex", "caption": "Echo system map", "group": "How it works", "orientation": "wide" }
+  ],
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/nirvaankohli/echo" }
+  ]
+}

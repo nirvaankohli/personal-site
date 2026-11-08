@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700" role="img" aria-labelledby="title description">
+  <title id="title">Echo scheduling flow</title>
+  <desc id="description">An iMessage request is saved as a schedule, then Echo sends a reminder or runs connected agent work at the chosen time.</desc>
+  <rect width="1200" height="700" fill="#101827"/>
+  <path d="M100 130H1100M100 570H1100" stroke="#35445d" stroke-width="2"/>
+  <text x="100" y="91" fill="#a6b9df" font-family="Arial, sans-serif" font-size="28" font-weight="700" letter-spacing="4">ECHO / SCHEDULES</text>
+  <text x="100" y="640" fill="#8190a9" font-family="Arial, sans-serif" font-size="23">A message today, a useful response later.</text>
+  <g font-family="Arial, sans-serif">
+    <rect x="100" y="210" width="282" height="280" rx="22" fill="#182438" stroke="#49617e" stroke-width="2"/>
+    <text x="126" y="263" fill="#7fb0ff" font-size="22" font-weight="700">01 / MESSAGE</text>
+    <text x="126" y="328" fill="#f1f4fa" font-size="29" font-weight="700">“Remind me</text>
+    <text x="126" y="365" fill="#f1f4fa" font-size="29" font-weight="700">tomorrow at 7”</text>
+    <text x="126" y="440" fill="#a9b7cd" font-size="21">Sent through iMessage</text>
+
+    <path d="M408 350H458" stroke="#7fb0ff" stroke-width="4" stroke-linecap="round"/>
+    <path d="m449 340 13 10-13 10" fill="none" stroke="#7fb0ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="483" y="210" width="282" height="280" rx="22" fill="#182438" stroke="#49617e" stroke-width="2"/>
+    <text x="509" y="263" fill="#7fb0ff" font-size="22" font-weight="700">02 / SAVE</text>
+    <text x="509" y="328" fill="#f1f4fa" font-size="29" font-weight="700">Echo stores</text>
+    <text x="509" y="365" fill="#f1f4fa" font-size="29" font-weight="700">the schedule</text>
+    <text x="509" y="440" fill="#a9b7cd" font-size="21">One-time or recurring</text>
+
+    <path d="M791 350H841" stroke="#7fb0ff" stroke-width="4" stroke-linecap="round"/>
+    <path d="m832 340 13 10-13 10" fill="none" stroke="#7fb0ff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <rect x="866" y="210" width="234" height="280" rx="22" fill="#182438" stroke="#49617e" stroke-width="2"/>
+    <text x="892" y="263" fill="#7fb0ff" font-size="22" font-weight="700">03 / DELIVER</text>
+    <text x="892" y="328" fill="#f1f4fa" font-size="29" font-weight="700">Reminder</text>
+    <text x="892" y="365" fill="#f1f4fa" font-size="29" font-weight="700">or agent work</text>
+    <text x="892" y="440" fill="#a9b7cd" font-size="21">Back through Messages</text>
+  </g>
+</svg>

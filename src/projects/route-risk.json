@@ -1,0 +1,37 @@
+{
+  "order": 1,
+  "slug": "route-risk",
+  "portfolio": "programming",
+  "title": "RouteRisk",
+  "type": "iOS · navigation",
+  "year": "2026",
+  "description": "A native iOS app that compares travel time with historical crash exposure, then shows the tradeoff on a live map. Submitted to CAC NJ07.",
+  "cover": {
+    "src": "/projects/route-risk.png",
+    "alt": "RouteRisk diagram comparing a faster route with a lower-exposure route"
+  },
+  "tools": ["Swift", "SwiftUI", "MapKit", "Core Location"],
+  "details": [
+    "RouteRisk starts with live MapKit route alternatives. It puts travel time beside a relative historical crash-exposure score so you can see the tradeoff before choosing a route.",
+    "The scoring layer matches public DVRPC fatal and serious-injury crash records to nearby road segments. The app explains where that data applies and shows a coverage notice elsewhere; the score is context, not a safety guarantee.",
+    "I built destination search, route details, and in-app guidance around the map. While a trip is active, RouteRisk can check 511NJ reports near the route and look for an alternative. Optional trip updates and the possible-crash check are separate, experimental features."
+  ],
+  "highlights": ["Live MapKit routing and guidance", "Historical crash-exposure comparison", "Foreground incident alerts and rerouting"],
+  "video": {
+    "url": "https://www.youtube.com/watch?v=bBIa8ScnZ9U",
+    "embedUrl": "https://www.youtube-nocookie.com/embed/bBIa8ScnZ9U",
+    "title": "RouteRisk demo"
+  },
+  "gallery": [
+    { "src": "/projects/route-risk-home.png", "alt": "RouteRisk home screen with a satellite map and saved places", "caption": "Home screen", "group": "App screens", "orientation": "portrait" },
+    { "src": "/projects/route-risk-directions.png", "alt": "RouteRisk directions showing time and historical exposure for route choices", "caption": "Route choices", "group": "App screens", "orientation": "portrait" },
+    { "src": "/projects/route-risk-trip.png", "alt": "RouteRisk directions on a map for a short trip to Trenton Transit Center", "caption": "Trip view", "group": "App screens", "orientation": "portrait" },
+    { "src": "/projects/route-risk-settings.png", "alt": "RouteRisk settings showing historical data and privacy information", "caption": "Settings and data notes", "group": "App screens", "orientation": "portrait" },
+    { "src": "/projects/route-risk-scoring.png", "alt": "Diagram of how RouteRisk scores historical crash exposure", "caption": "How the exposure score works", "group": "How it works" },
+    { "src": "/projects/route-risk-backup.png", "alt": "Diagram of RouteRisk's optional trip update and possible crash check", "caption": "Optional trip updates", "group": "How it works" },
+    { "src": "/projects/route-risk-alert.png", "alt": "Diagram of an active incident alert and alternate route", "caption": "Live incident alerts", "group": "How it works" }
+  ],
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/nirvaankohli/routerisk" }
+  ]
+}

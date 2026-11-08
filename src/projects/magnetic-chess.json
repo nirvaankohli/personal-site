@@ -1,0 +1,28 @@
+{
+  "order": 4,
+  "slug": "magnetic-chess",
+  "portfolio": "engineering",
+  "title": "Magnetic Chess Board",
+  "type": "Hardware · software",
+  "year": "2026",
+  "description": "A Pico W chessboard with magnetic sensors that records physical moves and sends game states to a local web interface.",
+  "cover": {
+    "src": "/projects/magnetic-chess.png",
+    "alt": "Rendering of the magnetic chess board and its pieces"
+  },
+  "tools": ["Pico W", "MicroPython", "Flask", "PCB design"],
+  "details": [
+    "The board uses a matrix of reed switches beneath the squares to sense where pieces are present. A Raspberry Pi Pico W scans that physical state and sends it over Wi-Fi to a local Flask server.",
+    "The server compares the new position with the saved game state using python-chess, finds the matching legal move, and updates the move history. When more than one move could fit, the OLED and two buttons let the player choose.",
+    "Each game is saved for later review, including a local web view. I designed the board, pieces, and PCB around the challenge of turning a normal physical game into a record you can inspect afterward."
+  ],
+  "highlights": ["Reed-switch sensing across the board", "Legal-move matching with python-chess", "Local game history and web viewer"],
+  "gallery": [
+    { "src": "/projects/magnetic-chess-topdown.png", "alt": "Top-down render of the chessboard", "caption": "Board design" },
+    { "src": "/projects/magnetic-chess-pcb.png", "alt": "Top-down render of the board's PCB", "caption": "Circuit board" },
+    { "src": "/projects/magnetic-chess-web.png", "alt": "Local web interface showing a chess game", "caption": "Game viewer" }
+  ],
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/nirvaankohli/magnetic-chess-board" }
+  ]
+}

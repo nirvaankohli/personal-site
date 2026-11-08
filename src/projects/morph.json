@@ -1,0 +1,28 @@
+{
+  "order": 5,
+  "slug": "morph",
+  "portfolio": "engineering",
+  "title": "MORPH.00",
+  "type": "Hardware · interface",
+  "year": "2026",
+  "description": "A six-key macropad with a rotary encoder and OLED that changes its controls for the app you are using.",
+  "cover": {
+    "src": "/projects/morph.png",
+    "alt": "Rendering of the MORPH.00 macropad with six keys, a knob, and a display"
+  },
+  "tools": ["KB2040", "CircuitPython", "Flask", "KiCad"],
+  "details": [
+    "MORPH.00 is a compact desk control built around six keys, an EC11 rotary encoder, and an OLED. I chose a KB2040 board and designed the PCB and enclosure around the small form factor.",
+    "The keyboard firmware handles key presses, combinations, media controls, encoder actions, and display updates. A local Flask serial bridge accepts changes from the computer and sends them to the macropad.",
+    "The goal is a control surface that can change its behavior for the app at hand instead of staying locked to one set of shortcuts. The gallery shows the exterior views and the board underneath."
+  ],
+  "highlights": ["Six remappable keys and rotary input", "OLED display updates", "Desktop-to-device serial bridge"],
+  "gallery": [
+    { "src": "/projects/morph-front.png", "alt": "Front view of the MORPH.00 macropad", "caption": "Front view" },
+    { "src": "/projects/morph-side.png", "alt": "Side view of the MORPH.00 macropad", "caption": "Side view" },
+    { "src": "/projects/morph-pcb.png", "alt": "MORPH.00 circuit board with components", "caption": "Circuit board" }
+  ],
+  "links": [
+    { "label": "GitHub", "url": "https://github.com/nirvaankohli/MORPH.00" }
+  ]
+}
