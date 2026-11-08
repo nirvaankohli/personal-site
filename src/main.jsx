@@ -166,6 +166,7 @@ function Header({ onHome = false }) {
         <a href={`${home}#experience`}>Experience</a>
         <a href={`${home}#portfolios`}>Portfolios</a>
         <a href="https://blog.nirvaankohli.com/" target="_blank" rel="noopener noreferrer">Blog <span aria-hidden="true">↗</span></a>
+        <a href="/Nirvaan_Kohli_Resume.pdf" target="_blank" rel="noopener noreferrer">Resume <span aria-hidden="true">↗</span></a>
       </nav>
     </header>
   );
